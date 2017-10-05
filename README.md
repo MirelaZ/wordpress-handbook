@@ -26,4 +26,5 @@ We'll describe our development process here as well - setting the project locall
   * [CSS Coding standards](css_coding_standards.md)
 * [WordPress as API](wp_as_api.md)
   * [WordPress REST API](wp_rest_api.md)
+* [Tips and tricks](tips_and_tricks.md)
 * [Useful links](useful_links.md)

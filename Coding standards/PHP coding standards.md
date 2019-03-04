@@ -86,11 +86,11 @@ const THEME_VERSION = '1.0.0';
 
 ### Yoda Conditions
 
-We don't use [Yoda Conditions](https://en.wikipedia.org/wiki/Yoda_conditions), especially since the code checker should make sure that you don't assign a variable in conditionals.
+We don't use [Yoda Conditions](https://en.wikipedia.org/wiki/Yoda_conditions), especially since the code checker makes sure that you don't assign a variable in conditionals.
 
 ### Functions
 
-When defining a function or a method, there should be no space between the function name and opening parenthesis, but there should be a space between the closing parenthesis and open curly bracket like this:
+There should be no space between the function name and opening parenthesis when defining a function or a method, but there should be a space between the closing parenthesis and open curly bracket like this:
 
 ```php
 <?php
@@ -99,7 +99,7 @@ function function_name( $var ) { ... }
 
 #### Class method visibility
 
-Always add visibility keywords to methods and properties inside classes (`public`, `private` and `protected`).
+Always add visibility keywords to methods and properties inside classes (`public`, `private`, and `protected`).
 
 * `public` scope is used to make that variable/function available from anywhere, other classes and instances of the object.
 
@@ -172,7 +172,7 @@ If you're not sure what kind of value is returned from the WordPress core functi
 
 ## Type hinting
 
-Type declarations allow functions to require that parameters are of a certain type at call time. If the given value is of the incorrect type, then an error is generated—in PHP 5, this will be a recoverable fatal error, while PHP 7 will throw a `TypeError` exception. But we don't use or encourage using PHP < 7 in our projects.
+Type declarations allow functions to require that parameters are of a certain type at call time. If the given value is of the incorrect type, an error is generated—in PHP 5, this will be a recoverable fatal error, while PHP 7 will throw a `TypeError` exception. But we don't use or encourage using PHP < 7 in our projects.
 
 To specify a type declaration, the type name should be added before the parameter name. The declaration can be made to accept `NULL` values if the default value of the parameter is set to `NULL`.
 
@@ -201,7 +201,7 @@ You can type hint function arguments and return values, for example
   }
 ```
 
-When the method can return more than one types (for instance, string or boolean), **don't specify the return type**, as this will most likely throw `TypeError` exceptions (you can read the RFC for `mixed` typehint for version 7.3 [here](https://wiki.php.net/rfc/mixed-typehint)).
+When the method can return more than one type (for instance, string or boolean), **don't specify the return type**, as this will most likely throw `TypeError` exceptions (you can read the RFC for `mixed` typehint for version 7.3 [here](https://wiki.php.net/rfc/mixed-typehint)).
 
 From PHP 7.1 you can explicitly declare a variable to be `null`
 
@@ -247,7 +247,7 @@ class User_Credentials {
 }
 ```
 
-A table with typehints for each PHP versions: https://mlocati.github.io/articles/php-type-hinting.html
+A table with typehints for each PHP version: https://mlocati.github.io/articles/php-type-hinting.html
 
 ## Sanitization and escaping
 
@@ -267,7 +267,7 @@ When writing data to the database, be sure to [sanitize](https://developer.wordp
 
 `sanitize_text_field( wp_unslash( $_POST['my_data'] ) )`
 
-and to [prepare](https://developer.wordpress.org/reference/classes/wpdb/prepare/) your database queries.
+and [prepare](https://developer.wordpress.org/reference/classes/wpdb/prepare/) your database queries.
 
 ```php
 <?php
@@ -317,7 +317,7 @@ public function start_lvl( &$output, $depth = 0, $args = array() ) {
 }
 ```
 
-## Database Queries
+## Database queries
 
 Querying the database should be done using a `WP_Query` object. [Don't use query_posts()](https://wordpress.stackexchange.com/a/1755/58895) ever. It can affect other queries on the page because it reassigns the `global wp_query` object.
 
